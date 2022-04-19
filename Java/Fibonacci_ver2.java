@@ -1,5 +1,6 @@
 import java.util.*;
-
+// O(n) time | O(n) space
+// using hash map
 class Fibonacci {
 	public static int fib(int n) {
 		Map<Integer, Integer> memoize = new HashMap<Integer, Integer>();

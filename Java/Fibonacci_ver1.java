@@ -1,5 +1,6 @@
 import java.util.*;
-// T - O(2^2)
+// O(2^n) time | O(n) space
+// using brute force
 class Fibonacci {
 	public static int fib(int n) {
 		if (n == 1) // fib(1) = 0
