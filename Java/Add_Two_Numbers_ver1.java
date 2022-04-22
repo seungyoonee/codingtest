@@ -1,24 +1,13 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-import java.util.*
+public class Add_Two_Numbers_ver1 {
+    public static class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) {this.val = val;}
+        ListNode(int val, ListNode next) {this.val = val; this.next = next;}
+    }
 
-class public ListNode() {
-	private val;
-	private ListNode next;
-	
-	ListNode() {}
-	ListNode(int val) {this.val = val;}
-	ListNode(int val, ListNode next) {this.val = val; this.next = next;}
-
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers (ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
         ListNode p = l1, q = l2, curr = dummyHead;
         int carry = 0;
@@ -35,20 +24,20 @@ class public ListNode() {
         if (carry > 0) {
             curr.next = new ListNode(carry);
         }
-        return dummyHead.next;
+        System.out.print(dummyHead.next);
+		return dummyHead.next;
     }
 
-	public static void main(String args[]) {
-		ListNode<> test = new ListNode<>();
-}
+    public static void main(String args[]) {
+        ListNode l1 = new ListNode(2);
+        l1.next = new ListNode(4);
+        l1.next = new ListNode(3);
 
-public static void main(String args[]) {
-	ListNode<> test = new ListNode<>();
+        ListNode l2 = new ListNode(5);
+        l2.next = new ListNode(6);
+        l2.next = new ListNode(4);
 
-
-
-}
-
-public AddTwoNumbers(LinkedListNode l1, LinkedListNode l2) {
-
+        ListNode sum = addTwoNumbers(l1, l2);
+       // System.out.println(sum.addTwoNumbers(l1, l2));
+    }
 }
