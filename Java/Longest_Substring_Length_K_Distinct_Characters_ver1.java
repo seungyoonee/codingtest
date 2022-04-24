@@ -1,5 +1,5 @@
 import java.util.*;
-
+// using HashMap / Sliding Window Algorithm
 public class LongestSubstringLengthKDistinctCharacters {
 
 	public static int longestSubstringLength(char[] arr, int k) {

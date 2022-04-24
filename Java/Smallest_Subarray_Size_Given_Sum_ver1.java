@@ -1,3 +1,4 @@
+// using Sliding Window Algorithm
 public class SmallestSubarraySizeGivenSum {
 	
 	public static int smallestSubarraySize(int targetSum, int[] arr) {
