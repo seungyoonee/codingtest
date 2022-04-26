@@ -21,23 +21,31 @@ public class Add_Two_Numbers_ver1 {
             if (p != null) p = p.next;
             if (q != null) q = q.next;
         }
+
         if (carry > 0) {
             curr.next = new ListNode(carry);
         }
-        System.out.print(dummyHead.next);
+
 		return dummyHead.next;
     }
 
     public static void main(String args[]) {
         ListNode l1 = new ListNode(2);
-        l1.next = new ListNode(4);
-        l1.next = new ListNode(3);
-
-        ListNode l2 = new ListNode(5);
-        l2.next = new ListNode(6);
-        l2.next = new ListNode(4);
+		ListNode dummy1 = l1;
+		dummy1.next = new ListNode(4);
+		dummy1 = dummy1.next;
+		dummy1.next = new ListNode(3);
+        
+		ListNode l2 = new ListNode(5);
+		ListNode dummy2 = l2;
+		dummy2.next = new ListNode(6);
+		dummy2 = dummy2.next;
+		dummy2.next = new ListNode(4);
 
         ListNode sum = addTwoNumbers(l1, l2);
-       // System.out.println(sum.addTwoNumbers(l1, l2));
+		while (sum != null) {
+			System.out.println(sum.val);
+			sum = sum.next;
+		}
     }
 }
