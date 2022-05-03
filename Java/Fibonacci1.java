@@ -1,7 +1,7 @@
 import java.util.*;
 // O(2^n) time | O(n) space
 // using brute force
-class Fibonacci {
+public class Fibonacci1 {
 	public static int fib(int n) {
 		if (n == 1) // fib(1) = 0
 			return 0;

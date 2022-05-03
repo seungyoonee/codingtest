@@ -1,4 +1,4 @@
-public class Add_Two_Numbers_ver1 {
+public class AddTwoNumbers {
     public static class ListNode {
         int val;
         ListNode next;

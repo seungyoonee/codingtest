@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class addThreeNumbers {
+public class AddThreeNumbers {
 	public static List<List<Integer>> add(int[] nums) {
 		// copy the input int array
 		int[] arr = new int[nums.length];

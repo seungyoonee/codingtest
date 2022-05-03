@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Container_With_Most_Water_ver1 {
+public class ContainerWithMostWater {
     
     public static int calculateArea(int[] height) {
 

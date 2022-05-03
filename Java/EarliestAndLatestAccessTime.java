@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Earliest_And_Latest_Access_Time_ver1 {
+public class EarliestAndLatestAccessTime {
 
     public static HashMap<String, ArrayList<Integer>> getAccessTime(String[][] logs) {
         /*

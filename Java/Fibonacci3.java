@@ -1,7 +1,7 @@
-import java.util.*;
 // O(n) time | O(1) space
 // using iterative algorithm
-class Fibonacci {
+public class Fibonacci3 {
+
 	public static int fib(int n) {
 		int[] lastTwo = {0, 1};
 		int counter = 3;
@@ -15,7 +15,7 @@ class Fibonacci {
 	}
 
 	public static void main(String args[]) {
-		Fibonacci test = new Fibonacci();
+		Fibonacci3 test = new Fibonacci3();
 
 		System.out.print("fib(6): ");
 		System.out.println(test.fib(6));
