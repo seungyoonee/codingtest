@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class romanToInteger {
+public class RomanToInteger {
 	
 	public static int convert(String s) {
 		HashMap<Character, Integer> map = new HashMap<>();

@@ -1,4 +1,5 @@
-public class mergeTwoSortedLists {
+public class MergeTwoSortedLists {
+	
     public static class ListNode {
         int val;
         ListNode next;

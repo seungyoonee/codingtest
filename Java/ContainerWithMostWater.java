@@ -19,7 +19,7 @@ public class ContainerWithMostWater {
             else {
                 area = height[right] * (right - left); // shorter height * distance
                 maxArea = Math.max(area, maxArea);
-                right--; // ignore the shorte height
+                right--; // ignore the shorter height
             }
         }
 

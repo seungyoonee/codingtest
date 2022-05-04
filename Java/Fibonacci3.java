@@ -2,7 +2,7 @@
 // using iterative algorithm
 public class Fibonacci3 {
 
-	public static int fib(int n) {
+	public int fib(int n) {
 		int[] lastTwo = {0, 1};
 		int counter = 3;
 		while (counter <= n) {

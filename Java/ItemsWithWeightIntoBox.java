@@ -1,8 +1,8 @@
 import java.util.*;
 
-class itemsWithWeightIntoBox {
+public class ItemsWithWeightIntoBox {
+
 	public static int getMaxItems(int[] weights) {
-		HashMap<Integer, Integer> grams = new HashMap<>();
 
 		int capacityLeft = 5000 - weights[0];
 		Arrays.sort(weights);

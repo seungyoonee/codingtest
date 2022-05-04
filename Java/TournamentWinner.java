@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class tournamentWinner {
+public class TournamentWinner {
 
 	public static String tournament(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
 		HashMap<String, Integer> scores = new HashMap<>();

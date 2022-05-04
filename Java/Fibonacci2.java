@@ -1,8 +1,8 @@
 import java.util.*;
 // O(n) time | O(n) space
 // using hash map
-class Fibonacci {
-	public static int fib(int n) {
+class Fibonacci2 {
+	public int fib(int n) {
 		Map<Integer, Integer> memoize = new HashMap<Integer, Integer>();
 		memoize.put(1, 0);
 		memoize.put(2, 1);
@@ -19,7 +19,7 @@ class Fibonacci {
 	}
 
 	public static void main(String arg[]) {
-		Fibonacci test = new Fibonacci();
+		Fibonacci2 test = new Fibonacci2();
  
 		System.out.print("fib(6): ");
       	System.out.println(test.fib(6));

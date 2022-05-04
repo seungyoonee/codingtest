@@ -1,8 +1,4 @@
-import java.util.*;
-
-import javax.swing.tree.ExpandVetoException;
-
-public class Longest_Palindrome_Length_ver1 {
+public class LongestPalindromeLength {
 
     public static String palindromeLength(String s) {
         if (s.length() < 1) return "";
