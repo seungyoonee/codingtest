@@ -7,6 +7,7 @@ public class MaxSubarraySum {
 
         for (int i = 1; i < nums.length; i++) {
             curSum = Math.max(nums[i] + curSum, nums[i]);
+            System.out.println(curSum);
             maxSum = Math.max(curSum, maxSum);
         }
 
@@ -19,7 +20,7 @@ public class MaxSubarraySum {
         int[] test3 = {5, 4, -1, 7, 8};
 
         System.out.println(getMaxSum(test1)); // 6
-        System.out.println(getMaxSum(test2)); // 1
-        System.out.println(getMaxSum(test3)); // 23
+        //System.out.println(getMaxSum(test2)); // 1
+        //System.out.println(getMaxSum(test3)); // 23
     }
 }

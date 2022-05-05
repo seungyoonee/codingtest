@@ -9,7 +9,7 @@ public class LongestSubstringLengthWithoutRepeating {
 
 		for (int windowEnd = 0; windowEnd < s.length(); windowEnd++) {
 			while (map.containsKey(s.charAt(windowEnd))) {
-				map. remove(s.charAt(windowStart));
+				map.remove(s.charAt(windowStart));
 				windowStart++;
 			}
 			map.put(s.charAt(windowEnd), 0);
