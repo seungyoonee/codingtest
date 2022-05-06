@@ -12,6 +12,8 @@ public class ValidParantheses {
 
         for (char c : s.toCharArray()) {
             if (map.containsKey(c)) {
+                // is.Empty - case 1: ) comes first
+                // pop != get - case 1: (]
                 if (st.isEmpty() || st.pop() != map.get(c)) {
                     return false;
                 }
