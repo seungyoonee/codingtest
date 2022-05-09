@@ -20,7 +20,12 @@ class Fibonacci2 {
 
 	public static void main(String arg[]) {
 		Fibonacci2 test = new Fibonacci2();
- 
+		
+		System.out.println("fib(1): " + test.fib(1));
+		System.out.println("fib(2): " + test.fib(2));
+		System.out.println("fib(3): " + test.fib(3));
+		System.out.println("fib(4): " + test.fib(4));
+		System.out.println("fib(5): " + test.fib(5));
 		System.out.print("fib(6): ");
       	System.out.println(test.fib(6));
 		System.out.print("fib(15): ");

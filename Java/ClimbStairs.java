@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class ClimbStairs {
     
     public static int climbStairs(int n) {
@@ -8,21 +6,21 @@ public class ClimbStairs {
         if (n == 1) return 1;
         if (n == 2) return 2;
 
-        int one_step_before = 2;
-        int two_steps_before = 1;
-        int all_ways = 0;
+        int stair1 = 1;
+        int stair2 = 2;
+        int result = 0;
 
-		for (int i = 2; i < n; i++) {
-			all_ways = one_step_before + two_steps_before;
-            two_steps_before = one_step_before;
-            one_step_before = all_ways;
+		for (int i = 3; i <= n; i++) {
+			result = stair1 + stair2;
+            stair1 = stair2;
+            stair2 = result;
 		}
 
-		return all_ways;
+		return result;
     }
 
     public static void main(String args[]) {
-        int test1 = 45;
+        int test1 = 45; // 1836311903
         int test2 = 2; // 2
         int test3 = 3; // 3
         int test4 = 4; // 5
