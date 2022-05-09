@@ -13,11 +13,11 @@ public class MySqrt {
             if (mid == x / mid) {
                 return mid;
             }
-            else if (mid < x / mid) {
+            else if (mid < x / mid) { // check right part
                 start = mid + 1;
             }
             else {
-                end = mid - 1;
+                end = mid - 1; // check left part
             }
         }
 
