@@ -68,6 +68,6 @@ public class EarliestAndLatestAccessTime {
             {"1202", "user_1", "resource_3"}
         };
 
-        System.out.println(getAccessTime(log1).toString());
+        System.out.println(Arrays.toString(getAccessTime(log1)));
     }
 }
