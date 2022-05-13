@@ -12,9 +12,9 @@ public class AddThreeNumbers {
 		List<List<Integer>> output = new ArrayList<>();
 
 		for (int i = 0; i < arr.length - 2; i++) {
-				int low = i + 1;
-				int high = arr.length - 1;
-				int sum = -arr[i];
+			int low = i + 1;
+			int high = arr.length - 1;
+			int sum = -arr[i];
 			if (i == 0 || arr[i] != arr[i - 1]) {
 				while (low < high) {
 					if (arr[low] + arr[high] == sum) {
