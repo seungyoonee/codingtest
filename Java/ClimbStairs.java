@@ -1,5 +1,5 @@
 public class ClimbStairs {
-    
+
     public static int climbStairs(int n) {
 
         if (n <= 0) return 0;
