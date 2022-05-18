@@ -1,4 +1,4 @@
-public class TreeInsertion {
+public class BST {
     // inorder = left > root > right
     // to print BST from the smallest
     public static void inorder(Node root) {
@@ -29,6 +29,28 @@ public class TreeInsertion {
         return root;
     }
 
+    public static void search(Node root, int target) {
+        // if the target is not in the BST)
+        if (root == null) {
+            System.out.print("\nThe target " + target + " is not found.");
+            return ;
+        }
+        // if the target is less than the root,
+        // search the left subtree
+        if (target < root.data) {
+            search(root.left, target);
+        }
+        // if the target is bigger than the root,
+        // search the right subtree
+        else if (target > root.data) {
+            search(root.right, target);
+        }
+        // if the target is found
+        else {
+            System.out.print("\nThe target " + target + " is found.");
+        }
+    }
+
     public static Node buildBST(int[] keys) {
         Node root = null;
         for (int key : keys) {
@@ -46,6 +68,10 @@ public class TreeInsertion {
         //        4
         Node root = buildBST(keys);
         inorder(root);
+
+        search(root, 4);
+        search(root, 9);
+        search(root, 10);
     }
 }
 
