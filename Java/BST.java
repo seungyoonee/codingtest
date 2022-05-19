@@ -51,6 +51,8 @@ public class BST {
         }
     }
 
+    public static Node {}
+    
     public static Node buildBST(int[] keys) {
         Node root = null;
         for (int key : keys) {
