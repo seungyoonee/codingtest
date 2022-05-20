@@ -51,7 +51,32 @@ public class BST {
         }
     }
 
-    public static Node {}
+    public static Node delete(Node root, int target) {
+        // if target is not found
+        if (root == null) {
+            return null;
+        }
+        // if target is smaller than the root,
+        // recur for the left subtree
+        if (target < root.data) {
+            root.left = delete(root.left, target);
+        }
+        // if target is bigger than the root,
+        // recur for the right subtree
+        else if (target > root.data) {
+            root.right = delete(root.right, target);
+        }
+        // if target is found
+        else {
+            // Case 1: if the node has no children
+            if (root.left == null && root.right == null) {
+                return null; // deleted
+            }
+            else if (root.left != null && root.right != null) {
+                
+            }
+        }
+    }
     
     public static Node buildBST(int[] keys) {
         Node root = null;
