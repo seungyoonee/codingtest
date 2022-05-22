@@ -11,6 +11,16 @@ public class BST {
         inorder(root.right);
     }
 
+    public static void preorder(Node root) {
+        if (root == null) {
+            return ;
+        }
+
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
     public static Node insert(Node root, int key) {
         // if root is null, return a new node and return it
         if (root == null) {
@@ -51,7 +61,7 @@ public class BST {
         }
     }
 
-    public static Node delete(Node root, int target) {
+    /*public static Node delete(Node root, int target) {
         // if target is not found
         if (root == null) {
             return null;
@@ -73,10 +83,10 @@ public class BST {
                 return null; // deleted
             }
             else if (root.left != null && root.right != null) {
-                
+
             }
         }
-    }
+    }*/
     
     public static Node buildBST(int[] keys) {
         Node root = null;
@@ -99,6 +109,7 @@ public class BST {
         search(root, 4);
         search(root, 9);
         search(root, 10);
+        preorder(root);
     }
 }
 
