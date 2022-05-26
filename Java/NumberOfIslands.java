@@ -47,7 +47,7 @@ public class NumberOfIslands {
         // current ground is now visited
         visited[row][col] = true;
 
-        // check 8 neighbors, recur for the ground
+        // check 8 neighbors, recur for the ground while marking as visited
         for (int i = 0; i < 8; i++) {
             if (isSafe(M, row + rowNum[i], col + colNum[i], visited))
                 DFS(M, row + rowNum[i], col + colNum[i], visited);
