@@ -19,7 +19,6 @@ This is a variation of the standard problem:
 “Counting the number of connected components in an undirected graph”. 
 
 */
-import java.util.*;
 
 public class NumberOfIslands {
     // fixed number of rows and columns
@@ -32,7 +31,7 @@ public class NumberOfIslands {
         && (col >= 0)           // col = 0, 1, 2, 3, 4
         && (col < COL)          // COL = 5
         && (M[row][col] == 1)   // island ground exists
-        && !visited[row][col];  // ground is not visited
+        && !visited[row][col];  // current ground is not visited
     }
 
     public static void DFS(int M[][], int row, int col, boolean visited[][]) {
@@ -40,12 +39,15 @@ public class NumberOfIslands {
         {{1, 8, 7},
          {2, 0, 6},
          {3, 4, 5}} -> 1, 2, 3, 4, 5, 6, 7, 8
+         each ground has 8 neighbors
         */
         int rowNum[] = new int[] {-1, -1, -1, 0, 0, 1, 1, 1};
         int colNum[] = new int[] {-1, 0, 1, -1, 1, -1, 0, 1};
 
+        // current ground is now visited
         visited[row][col] = true;
 
+        // check 8 neighbors, recur for the ground
         for (int i = 0; i < 8; i++) {
             if (isSafe(M, row + rowNum[i], col + colNum[i], visited))
                 DFS(M, row + rowNum[i], col + colNum[i], visited);
@@ -58,8 +60,10 @@ public class NumberOfIslands {
         int count = 0;
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COL; j++) {
-                DFS(M, i, j, visited);
-                count++;
+                if (M[i][j] == 1 && !visited[i][j]) {
+                    DFS(M, i, j, visited);
+                    count++;
+                }
             }
         }
 
@@ -72,8 +76,7 @@ public class NumberOfIslands {
                                  {1, 0, 0, 1, 1},
                                  {0, 0, 0, 0, 0},
                                  {1, 0, 1, 0, 1}};
-        NumberOfIslands I = new NumberOfIslands();
-        System.out.println(countIslands(M));
-        System.out.println("Number of islands is: " + I.countIslands(M));
+        
+        System.out.println("Number of islands: " + countIslands(M));
     }
 }
