@@ -1,0 +1,10 @@
+Parking Lot Description (Requirements):
+1) Spots: 10k - 30k
+2) Entrances/Exits: 4
+3) Spot is assigned on the ticket
+4) Spot should be nearest to the entrances
+5) Limits/Capacity < 30k
+6) Types of spots: handicapped, compact, large, motorcycle
+7) Payment methods: cash & cards
+8) Monitoring system exists
+
