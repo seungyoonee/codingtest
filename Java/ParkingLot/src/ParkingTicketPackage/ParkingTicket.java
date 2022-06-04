@@ -14,15 +14,13 @@ public class ParkingTicket {
     private String parkingSpotType;
     private String issueTime;
 
-    ParkingTicket() {
-        
-    }
+    public ParkingTicket() {}
 
-    ParkingTicket(String id, String parkingSpotId, String parkingSpotType, String issueTime) {
-        id = this.id;
-        parkingSpotId = this.parkingSpotId;
-        parkingSpotType = this.parkingSpotType;
-        issueTime = this.issueTime;
+    public ParkingTicket(String id, String parkingSpotId, String parkingSpotType, String issueTime) {
+        this.id = id;
+        this.parkingSpotId = parkingSpotId;
+        this.parkingSpotType = parkingSpotType;
+        this.issueTime = issueTime;
     }
 
     public void setId(String id) {
@@ -57,13 +55,17 @@ public class ParkingTicket {
         return issueTime;
     }
 
+    public void printParkingTicket() {
+        System.out.println("ID: " + getId() + "\nParking Spot ID: " + getParkingSpotId() + "\nParking Spot Type: " + getParkingSpotType() + "\nIssued Time: " + getIssueTime() + "\n");
+    }
+
     public static void main(String args[]) {
         
         ParkingTicket ticket = new ParkingTicket();
         
-        System.out.println(ticket.getId());
-        System.out.println(ticket.getIssueTime());
-        System.out.println(ticket.getParkingSpotId());
-        System.out.println(ticket.getParkingSpotType());
+        ticket.printParkingTicket();
+
+        ParkingTicket ticket1 = new ParkingTicket("1111", "11", "Compact", "14:35");
+        ticket1.printParkingTicket();
     }
 }
