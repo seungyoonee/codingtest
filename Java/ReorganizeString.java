@@ -11,14 +11,12 @@ public class ReorganizeString {
         // put all the characters into a maxheap
         PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
         maxHeap.addAll(map.keySet());
-        System.out.println(maxHeap);
-
+        
         StringBuilder sb = new StringBuilder();
         while (maxHeap.size() > 1) {
             char curr = maxHeap.remove();
             char next = maxHeap.remove();
-            System.out.println(curr);
-            System.out.println(next);
+
             sb.append(curr);
             sb.append(next);
 

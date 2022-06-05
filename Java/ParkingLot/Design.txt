@@ -8,3 +8,44 @@ Parking Lot Description (Requirements):
 7) Payment methods: cash & cards
 8) Monitoring system exists
 
+Objects:
+ - (abstract, parent) ParkingSpot
+ - ParkingTicket
+ - Terminal
+ - PaymentMethod
+ - (interface) ParkingAssignmentStrategy
+ - 
+ - 
+
+parent ParkingSpot:
+ - handicappedParkingSpot
+ - compactParkingSpot
+ - largeParkingSpot
+ - motorcycleParkingSpot
+
+ParkingTicket:
+    properties:
+     - id
+     - parkingSpotId
+     - parkingSpotType
+     - issuedTime
+
+Terminal:
+    properties:
+    // int: 4b, char: 1b
+     - teminalId: 1, 2, 3, 4 / N, E, S, W
+
+    objects:
+     - EntryTerminal
+     - ExitTerminal
+
+
+ParkingAssignmentStrategy:
+    methods:
+     - getParkingSpot(Terminal terminal)
+     - releaseParkingSpot(PakingSpot spot)
+
+    algorithm:
+     - use minHeap to assign a parking spot
+     - 4 minHeap
+     - available/released as values

@@ -13,10 +13,13 @@ ParkingSpot is not used to instanciate itself,
 but types of parking spots will be instanciated
 */
 
-package ParkingTicketPackage;
+package ParkingSpot;
 
 public class ParkingSpot {
-    String type;
+
+    private String parkingSpotType;
+    
+    
 
     public static void main(String args[]) {
         System.out.println("testing");
