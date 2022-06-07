@@ -10,6 +10,7 @@ return the cheapest price from src to dst with at most k stops.
 If there is no such route, return -1.
 */
 import java.util.*;
+
 public class CheapestFlightsWithinKStops {
     
     public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
@@ -52,6 +53,46 @@ public class CheapestFlightsWithinKStops {
         return -1;
     }
 
+    public static boolean checkIfRouteExists(int[][] flights, int src, int dst) {
+
+        HashMap<Integer, List<int[]>> graph = new HashMap<>();
+
+        // flight = [0, 1, 100], [1, 2, 100], ...
+        for (int[] flight : flights) {
+
+            if (!graph.containsKey(flight[0]))
+                graph.put(flight[0], new ArrayList<int[]>());
+            graph.get(flight[0]).add(new int[] {flight[1]});
+        }
+
+        dfs(graph, src, dst);
+
+        return false;
+    }
+
+    public static Boolean dfs(HashMap<Integer, List<int[]>> graph, int src, int dst) {
+
+        if (src == dst) {
+            return true;
+        }
+
+        if (!graph.containsKey(src)) {
+            return false;
+        }
+
+        PriorityQueue<List<int[]>> q = new PriorityQueue<>();
+/*
+        for (int[] i : graph.get(src)) {
+            q.add(i);
+        }
+*/
+        //for (int i : graph.) {
+
+        //}
+
+        return false;
+    }
+
     public static void main(String args[]) {
         /*
         Input: n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1
@@ -92,6 +133,8 @@ public class CheapestFlightsWithinKStops {
         k = 0;
         cheapestPrice = findCheapestPrice(n, flights3, src, dst, k);
         System.out.println(cheapestPrice);
+
+        System.out.println(checkIfRouteExists(flights3, src, dst));
     }
 }
 
