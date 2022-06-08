@@ -12,7 +12,7 @@ If there is no such route, return -1.
 import java.util.*;
 
 public class CheapestFlightsWithinKStops {
-    
+
     public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
 
         HashMap<Integer, List<int[]>> graph = new HashMap<>();
@@ -55,22 +55,21 @@ public class CheapestFlightsWithinKStops {
 
     public static boolean checkIfRouteExists(int[][] flights, int src, int dst) {
 
-        HashMap<Integer, List<int[]>> graph = new HashMap<>();
+        HashMap<Integer, ArrayList<Integer>> graph = new HashMap<>();
 
         // flight = [0, 1, 100], [1, 2, 100], ...
         for (int[] flight : flights) {
 
             if (!graph.containsKey(flight[0]))
-                graph.put(flight[0], new ArrayList<int[]>());
-            graph.get(flight[0]).add(new int[] {flight[1]});
+                graph.put(flight[0], new ArrayList<Integer>());
+            graph.get(flight[0]).add(flight[1]);
         }
+        System.out.println(graph);
 
-        dfs(graph, src, dst);
-
-        return false;
+        return bfs(graph, src, dst);
     }
 
-    public static Boolean dfs(HashMap<Integer, List<int[]>> graph, int src, int dst) {
+    public static Boolean bfs(HashMap<Integer, ArrayList<Integer>> graph, int src, int dst) {
 
         if (src == dst) {
             return true;
@@ -80,15 +79,28 @@ public class CheapestFlightsWithinKStops {
             return false;
         }
 
-        PriorityQueue<List<int[]>> q = new PriorityQueue<>();
-/*
-        for (int[] i : graph.get(src)) {
+        Queue<Integer> q = new LinkedList<>();
+
+        for (int i : graph.get(src)) {
             q.add(i);
         }
-*/
-        //for (int i : graph.) {
+        System.out.println(q);
+        while (!q.isEmpty()) {
+            int destination = q.remove();
+            System.out.println(destination);
 
-        //}
+            if (destination == dst) {
+                return true;
+            }
+
+            if (graph.containsKey(destination)) {
+                for (int i : graph.get(destination)) {
+                    if (!q.contains(i))
+                        q.add(i);
+                }
+            }
+            System.out.println("q:" + q);
+        }
 
         return false;
     }
@@ -108,7 +120,7 @@ public class CheapestFlightsWithinKStops {
         int k = 1;
         
         int cheapestPrice = findCheapestPrice(n, flights1, src, dst, k);
-        System.out.println(cheapestPrice);
+        //System.out.println(cheapestPrice);
 
         /*
         Input: n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 1
@@ -120,7 +132,7 @@ public class CheapestFlightsWithinKStops {
         dst = 2;
         k = 1;
         cheapestPrice = findCheapestPrice(n, flights2, src, dst, k);
-        System.out.println(cheapestPrice);
+        //System.out.println(cheapestPrice);
 
         /*
         Input: n = 3, flights = [[0,1,100],[1,2,100],[0,2,500]], src = 0, dst = 2, k = 0
@@ -132,9 +144,13 @@ public class CheapestFlightsWithinKStops {
         dst = 2;
         k = 0;
         cheapestPrice = findCheapestPrice(n, flights3, src, dst, k);
-        System.out.println(cheapestPrice);
+        //System.out.println(cheapestPrice);
 
-        System.out.println(checkIfRouteExists(flights3, src, dst));
+        //System.out.println(checkIfRouteExists(flights3, src, dst));
+
+        int[][] flights4 = new int[][] {{0, 1, 0}, {0, 3, 0}, {1, 2, 0}, {3, 1, 0}, {3, 4, 0}, {2, 5, 0}, {2, 6, 0}, {4, 8, 0}, {5, 4, 0}, {6, 7, 0}, {0, 9, 0}};
+        System.out.println(checkIfRouteExists(flights4, 2, 9));
+
     }
 }
 
