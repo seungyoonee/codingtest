@@ -81,7 +81,7 @@ public class TicTacToe {
             
             try {
                 input = scanner.nextInt();
-                if (!(input > 0 && input <= 8)) {
+                if (!(input >= 0 && input <= 8)) {
                     System.out.println("wrong number");
                     continue;
                 }
