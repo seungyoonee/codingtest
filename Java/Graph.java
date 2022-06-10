@@ -61,13 +61,16 @@ public class Graph {
 
         // adjList[0] = [1, 2, 3]
         // i = 1, 2, 3
-        for (int i : adjList[src]) {
+        for (Integer i : adjList[src]) {
             // if not visited
             if (!isVisited[i]) {
                 // add the adj vertex to the result list
                 pathList.add(i);
                 // recur for other adj vertices
                 printAllPathsUtil(i, dst, isVisited, pathList);
+
+                // ArrayList.remove(int index)
+                // ArrayList.remove(Object o)
                 pathList.remove(i);
             }
         }
@@ -96,6 +99,6 @@ public class Graph {
         int src = 2;
         int dst = 3;
 
-        g.printAllPaths(2, 3);
+        g.printAllPaths(src, dst);
     }
 }
