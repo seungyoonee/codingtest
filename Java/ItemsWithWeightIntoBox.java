@@ -20,7 +20,7 @@ public class ItemsWithWeightIntoBox {
 	}
 
 	public static void main(String[] args) {
-		int[] input = new int[]{4850, 100, 30, 30, 100, 50, 100};
+		int[] input = new int[] {4850, 100, 30, 30, 100, 50, 100};
 
 		System.out.println(getMaxItems(input));
 	}
